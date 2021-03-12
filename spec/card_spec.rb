@@ -1,6 +1,6 @@
 class Card 
   attr_reader :rank, :suit
-  attr_writer :rank
+  attr_writer :rank, :suit
 
   def initialize(rank, suit)
     @rank = rank
@@ -33,5 +33,11 @@ RSpec.describe Card do
 
   it 'has a suit' do 
     expect(card.suit).to eq('Spades')
+  end
+
+  it 'has a custom error message' do 
+    card.suit = 'Nonsense'
+    comparison = 'Spades'
+    expect(card.suit).to eq(comparison), "Hey I expected #{comparison} but I got #{card.suit} instead."
   end
 end
