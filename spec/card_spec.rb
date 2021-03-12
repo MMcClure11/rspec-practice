@@ -1,5 +1,6 @@
 class Card 
   attr_reader :rank, :suit
+  attr_writer :rank
 
   def initialize(rank, suit)
     @rank = rank
@@ -18,8 +19,10 @@ RSpec.describe Card do
     Card.new('Ace', 'Spades')
   end
 
-  it 'has a rank' do 
+  it 'has a rank and that rank can change' do 
     expect(card.rank).to eq('Ace')
+    card.rank = 'Queen' #this does not work because of mutation, every time the card is referenced it is making a new instance of the card
+    expect(card.rank).to eq('Queen')
   end
 
   it 'has a suit' do 
