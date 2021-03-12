@@ -13,6 +13,7 @@ RSpec.describe Card do
     @card = Card.new('Ace', 'Spades')
   end
   #this will be run once before each test
+  #note instance variables are often not preferred because if an instance variable is undefined, you won't get an error it will evaluate to nil which can bake it more difficult to debug
   
   it 'has a rank' do 
     expect(@card.rank).to eq('Ace')
