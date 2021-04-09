@@ -10,3 +10,5 @@ First command: rspec --init
 
   add: --format documentation to .rspec file
   Thank you stack overflow! https://stackoverflow.com/questions/44913732/how-to-format-rspec-to-show-passing-on-default
+
+  To run tests: rspec spec/implicit_subject_spec.rb
