@@ -10,7 +10,8 @@ RSpec.describe 'doubles' do
 
   it "has read and write methods for file system" do 
     fs = double("File System")
-    allow(fs).to receive_messages(read: 'Romeo and Juliet', write: false)
+    allow(fs).to receive(:read).and_return("Romeo and Juliet")
+    allow(fs).to receive(:write).and_return(false)
     expect(fs.read).to eq('Romeo and Juliet')
     expect(fs.write).to eq(false)
 
